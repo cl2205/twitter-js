@@ -57,3 +57,16 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.name {
+  list-style: none;
+  font-weight: bold;
+}
+
+.col-md-9 a {
+  margin-bottom: 100px;
+}
+
+.tweetText a:link {
+  text-decoration: none;
+}

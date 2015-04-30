@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <title>Tweeter</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -78,5 +78,37 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      // Load the socket.io library above, then connect to the server.
+      // Because the socket.io server is being run on the same server as your 
+      // Express instance, you can connect() without any arguments.
+      var socket = io.connect();
+
+      // When 'new_tweet' events are fired, do something with the packaged tweet
+      socket.on('new_tweet', function (tweet) { 
+        console.log(tweet);
+        alert('Refreshing... check the console...');
+        
+        var toAdd = document.createElement('div');
+        var li1 = document.createElement('a');
+        li1.href = "/users/"+ tweet.name;
+        toAdd.appendChild(li1);
+
+        var div = document.getElementsByClassName("col-md-9");
+        div[0].appendChild(toAdd);
+        // some logic to add the new tweet to the DOM…
+      }); 
+    </script>
   </body>
 </html>
+
+<!-- 
+<img style="width: 50px; height: 50px; float: left" src="/public/marshmellow-kitten.jpg">
+
+<li><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}" class="tweetText">{{tweet.text}}</a></li>
+        <a href="" style="clear:left">Re-tweet</a>
+        <br>
+        <br> 
+
+        -->

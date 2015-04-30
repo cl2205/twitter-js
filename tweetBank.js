@@ -3,7 +3,7 @@ var _=require('underscore');
 var data = [];
 
 var add = function (name, text) {
-  data.push({ name: name, text: text });
+  data.push({ name: name, text: text, id: data.length });
 };
 
 var list = function () {
@@ -35,9 +35,8 @@ var getFakeTweet = function() {
 
 for(var i=0; i<10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
-
 }
 
-/*data.push({name:'Baz', text: 'Wow what a great app you have!'});
-var test= find({name: 'Baz'});
-console.log(test);*/
+data.push({name:'Baz', text: 'Wow what a great app you have!', id: 10});
+// var test= find({id: 10});
+// console.log(test);
