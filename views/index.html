@@ -15,7 +15,7 @@
     
       <!-- display tweets here -->
       {% for tweet in tweets %}
-      	<img style="width: 50px; height: 50px; float: left" src="/public/marshmellow-kitten.jpg">
+      	<img style="width: 50px; height: 50px; float: left" src="/marshmellow-kitten.jpg">
       	<li class="name"><a href="/users/{{tweet.name}}">{{tweet.name}}</a></li>
         <li><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}" class="tweetText">{{tweet.text}}</a></li>
         <a href="" style='clear:left'>Re-tweet</a>
